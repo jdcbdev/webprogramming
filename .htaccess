@@ -13,3 +13,4 @@
 RewriteEngine On
 RewriteRule ^admin/dashboard$ admin/dashboard.php
 RewriteRule ^admin/products$ admin/dashboard.php
+RewriteRule ^admin/accounts$ admin/dashboard.php
