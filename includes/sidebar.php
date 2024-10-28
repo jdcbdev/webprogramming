@@ -1,3 +1,4 @@
+
 <div class="sidebar flex-column flex-shrink-0">
     <a href="/" class="logo">
         <img class="img-fluid" src="../img/logo1.png" alt="" srcset="">
@@ -37,7 +38,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="accounts" class="nav-link" id="accounts-link">
+            <a href="accounts" id="accounts-link" class="nav-link">
                 <i class="bi bi-people"></i>
                 <span class="fs-6 ms-2">Accounts</span>
             </a>
