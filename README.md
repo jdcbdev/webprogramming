@@ -18,6 +18,6 @@ This repository is intended for WEB DEVELOPMENT
 - Commit: [3a1f6ec]
 - Description: Made minor adjustments to the database schema in `sample_db.sql`, including commenting out the `DROP DATABASE` statement.
 
-#### Small Changes on Database Schema
+#### Added Add account
 - Commit: [85807f6]
 - Description: Added Account function for viewing account
