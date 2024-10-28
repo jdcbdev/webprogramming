@@ -29,7 +29,7 @@
                             </form>
                         </div>
                         <div class="page-title-right d-flex align-items-center">
-                            <a id="add-account" href="add-account.php" class="btn btn-primary brand-bg-color">Add Account</a>
+                            <a id="add-account" href="#" class="btn btn-primary brand-bg-color">Add Account</a>
                         </div>
                     </div>
                     <div class="table-responsive">
