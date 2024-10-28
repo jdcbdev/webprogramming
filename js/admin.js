@@ -18,11 +18,18 @@ $(document).ready(function(){
         viewProducts()
     })
 
+    $('#accounts-link').on('click', function(e) {
+        e.preventDefault()
+        viewAccounts()
+    })
+
     let url = window.location.href;
     if (url.endsWith('dashboard')){
         $('#dashboard-link').trigger('click')
     }else if (url.endsWith('products')){
         $('#products-link').trigger('click')
+    }else if (url.endsWith('accounts')) {
+        $('#accounts-link').trigger('click')
     }else{
         $('#dashboard-link').trigger('click')
     }
@@ -98,6 +105,33 @@ $(document).ready(function(){
                     addProduct()
                 })
 
+            }
+        })
+    }
+
+    function viewAccounts() {
+        $.ajax({
+            type: 'GET',
+            url: '../accounts/view-accounts.php',
+            dataType: 'html',
+            success: function(response){
+                $('.content-page').html(response)
+
+                var table = $('#table-accounts').DataTable({
+                    dom: 'rtp',
+                    pageLength: 10,
+                    ordering: false,
+                });
+
+                // Bind custom input to DataTable search
+                $('#custom-search').on('keyup', function() {
+                    table.search(this.value).draw()
+                });
+
+                $('#add-account').on('click', function(e){
+                    e.preventDefault()
+                    addAccount()
+                })
             }
         })
     }
