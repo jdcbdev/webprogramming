@@ -28,7 +28,7 @@ $(document).ready(function(){
         $('#dashboard-link').trigger('click')
     }else if (url.endsWith('products')){
         $('#products-link').trigger('click')
-    }else if (url.endsWith('manage-accounts')) {
+    }else if (url.endsWith('manageAccounts')) {
         $('#accounts-link').trigger('click')
     }else{
         $('#dashboard-link').trigger('click')
@@ -112,7 +112,7 @@ $(document).ready(function(){
     function viewAccounts() {
         $.ajax({
             type: 'GET',
-            url: '../manage-accounts/view-accounts.php',
+            url: '../manageAccounts/view-accounts.php',
             dataType: 'html',
             success: function(response){
                 $('.content-page').html(response)
@@ -139,7 +139,7 @@ $(document).ready(function(){
     function addAccount() {
         $.ajax({
             type: 'GET',
-            url: '../manage-accounts/add-account.html',
+            url: '../manageAccounts/add-account.html',
             dataType: 'html',
             success: function(view){
                 $('.modal-container').html(view)
@@ -156,7 +156,7 @@ $(document).ready(function(){
     function saveAccount() {
         $.ajax({
             type: 'POST',
-            url: '../manage-accounts/add-account.php',  // Make sure this points to your PHP handler
+            url: '../manageAccounts/add-account.php',  // Make sure this points to your PHP handler
             data: $('#form-add-account').serialize(),         // Serialize the form data
             dataType: 'json',                    // Expect a JSON response
             success: function(response) {
