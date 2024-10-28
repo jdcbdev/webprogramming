@@ -28,7 +28,7 @@ $(document).ready(function(){
         $('#dashboard-link').trigger('click')
     }else if (url.endsWith('products')){
         $('#products-link').trigger('click')
-    }else if (url.endsWith('accounts')) {
+    }else if (url.endsWith('manage-accounts')) {
         $('#accounts-link').trigger('click')
     }else{
         $('#dashboard-link').trigger('click')
@@ -112,7 +112,7 @@ $(document).ready(function(){
     function viewAccounts() {
         $.ajax({
             type: 'GET',
-            url: '../accounts/view-accounts.php',
+            url: '../manage-accounts/view-accounts.php',
             dataType: 'html',
             success: function(response){
                 $('.content-page').html(response)
