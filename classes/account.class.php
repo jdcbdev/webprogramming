@@ -81,6 +81,19 @@ class Account{
 
         return $data;
     }
+
+    function showAll()
+    {
+        $sql = 'SELECT * FROM account ORDER BY first_name, last_name';
+        $query = $this->db->connect()->prepare($sql);
+
+        $data = null;
+        if ($query->execute()) {
+            $data = $query->fetchAll();
+        }
+
+        return $data;
+    }
 }
 
 // $obj = new Account();
