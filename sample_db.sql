@@ -6,6 +6,7 @@
 -- Generation Time: Sep 27, 2024 at 07:09 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
+-- DROP DATABASE IF EXISTS `sample_db`;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
