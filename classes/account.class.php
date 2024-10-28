@@ -8,8 +8,8 @@ class Account{
     public $last_name = '';
     public $username = '';
     public $password = '';
-    public $role = 'staff';
-    public $is_staff = true;
+    public $role = '';
+    public $is_staff = false;
     public $is_admin = false;
 
 
@@ -17,6 +17,17 @@ class Account{
 
     function __construct(){
         $this->db = new Database();
+    }
+
+    function ShowAll(){
+        $sql = "SELECT * FROM account;";
+        $query = $this->db->connect()->prepare($sql);
+        $data = null;
+        if($query->execute()){
+            $data = $query->fetchAll();
+        }
+
+        return $data;
     }
 
     function add(){
@@ -83,6 +94,6 @@ class Account{
     }
 }
 
-// $obj = new Account();
+//  $obj = new Account();
 
 // $obj->add();

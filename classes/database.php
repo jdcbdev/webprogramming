@@ -24,5 +24,5 @@ class Database{
 }
 
 // Uncomment the lines below to test the connection by creating an instance of the Database class and calling the connect() method.
-// $obj = new Database();
-// $obj->connect();
+ $obj = new Database();
+ $obj->connect();
