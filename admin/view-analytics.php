@@ -1,3 +1,18 @@
+<?php
+require_once '../classes/account.class.php';
+session_start();
+
+// Check if the request is made via AJAX
+if (!(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest')) {
+    // If not an AJAX request, redirect to access denied page
+    header('Location: ../account/access_forbidden.php');
+    exit();
+}
+
+// Continue with the rest of the page for AJAX requests
+$accountObj = new Account();
+?>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
