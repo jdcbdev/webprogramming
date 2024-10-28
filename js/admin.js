@@ -139,7 +139,7 @@ $(document).ready(function(){
     function addAccount() {
         $.ajax({
             type: 'GET',
-            url: '../accounts/add-account.html',
+            url: '../manage-accounts/add-account.html',
             dataType: 'html',
             success: function(view){
                 $('.modal-container').html(view)
@@ -156,7 +156,7 @@ $(document).ready(function(){
     function saveAccount() {
         $.ajax({
             type: 'POST',
-            url: '../accounts/add-account.php',  // Make sure this points to your PHP handler
+            url: '../manage-accounts/add-account.php',  // Make sure this points to your PHP handler
             data: $('#form-add-account').serialize(),         // Serialize the form data
             dataType: 'json',                    // Expect a JSON response
             success: function(response) {
