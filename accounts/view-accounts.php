@@ -44,6 +44,7 @@
                                     <th>Role</th>
                                     <th>Staff</th>
                                     <th>Admin</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,7 +52,6 @@
                                 $i = 1;
                                 $array = $accountObj->showAll();
                                 ?>
-
                                 <?php foreach ($array as $arr): ?>
                                     <tr>
                                         <td class="text-start"><?= $i++ ?></td>
@@ -61,6 +61,12 @@
                                         <td><?= $arr['role'] ?></td>
                                         <td><?= $arr['is_staff'] ? 'Yes' : 'No' ?></td>
                                         <td><?= $arr['is_admin'] ? 'Yes' : 'No' ?></td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-outline-success me-1 edit-account-btn"
+                                                data-id="<?= $arr['id'] ?>">Edit</button>
+                                            <button class="btn btn-sm btn-outline-danger deleteBtn delete-account-btn"
+                                                data-id="<?= $arr['id'] ?>">Delete</button>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

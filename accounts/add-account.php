@@ -66,3 +66,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo json_encode(['status' => 'error', 'message' => 'Something went wrong when adding the new account.']);
     }
 }
+?>

@@ -1,111 +1,58 @@
 <!-- Modal -->
-<div
-  class="modal fade"
-  id="staticBackdrop"
-  data-bs-backdrop="static"
-  data-bs-keyboard="false"
-  tabindex="-1"
-  aria-labelledby="staticBackdropLabel"
-  aria-hidden="true"
->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Add Account</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> 
       <form action="" method="post" id="form-add-account">
-        <div class="modal-body">
-          <div class="mb-2">
-            <label for="first-name" class="form-label">First Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="first-name"
-              name="first-name"
-            />
-            <div class="invalid-feedback"></div>
-          </div>
+          <div class="modal-body">
+              <div class="mb-2">
+                  <label for="first-name" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="first-name" name="first-name">
+                  <div class="invalid-feedback"></div>
+              </div>
+          
+              <div class="mb-2">
+                  <label for="last-name" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="last-name" name="last-name">
+                  <div class="invalid-feedback"></div>
+              </div>
+          
+              <div class="mb-2">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="username" name="username">
+                  <div class="invalid-feedback"></div>
+              </div>
+          
+              <div class="mb-2">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="text" class="form-control" id="password" name="password">
+                  <div class="invalid-feedback"></div>
+              </div>
 
-          <div class="mb-2">
-            <label for="last-name" class="form-label">Last Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="last-name"
-              name="last-name"
-            />
-            <div class="invalid-feedback"></div>
-          </div>
+              <div class="mb-2">
+                  <label for="role" class="form-label">Role</label>
+                  <input type="text" name="role" id="role" class="form-control" />
+                  <div class="invalid-feedback"></div>
+              </div>
 
-          <div class="mb-2">
-            <label for="username" class="form-label">Username</label>
-            <input
-              type="text"
-              class="form-control"
-              id="username"
-              name="username"
-            />
-            <div class="invalid-feedback"></div>
+              <div class="mb-2">
+                  <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="is-staff" name="is-staff">
+                      <label class="form-check-label" for="is-staff">Is Staff</label>
+                  </div>
+                  <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="is-admin" name="is-admin">
+                      <label class="form-check-label" for="is-admin">Is Admin</label>
+                  </div>                      
+              </div>
           </div>
-
-          <div class="mb-2">
-            <label for="password" class="form-label">Password</label>
-            <input
-              type="text"
-              class="form-control"
-              id="password"
-              name="password"
-            />
-            <div class="invalid-feedback"></div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary brand-bg-color">Save Account</button>
           </div>
-
-          <div class="mb-2">
-            <label for="role" class="form-label">Role</label>
-            <input type="text" name="role" id="role" class="form-control" />
-            <div class="invalid-feedback"></div>
-          </div>
-
-          <div class="mb-2">
-            <div class="form-check form-switch">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                role="switch"
-                id="is-staff"
-                name="is-staff"
-              />
-              <label class="form-check-label" for="is-staff">Is Staff</label>
-            </div>
-            <div class="form-check form-switch">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                role="switch"
-                id="is-admin"
-                name="is-admin"
-              />
-              <label class="form-check-label" for="is-admin">Is Admin</label>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
-          <button type="submit" class="btn btn-primary brand-bg-color">
-            Save Account
-          </button>
-        </div>
       </form>
     </div>
   </div>
