@@ -11,8 +11,8 @@ if(isset($_SESSION['account'])){
 }
 
 // Include the necessary files for utility functions and the Product class.
-require_once('functions.php');
-require_once('product.class.php');
+require_once('../tools/functions.php');
+require_once('../classes/product.class.php');
 
 // Initialize variables to hold form input values and error messages.
 $code = $name = $category = $price = '';

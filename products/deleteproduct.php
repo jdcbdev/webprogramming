@@ -19,7 +19,7 @@ if (isset($_GET['id'])) {
 }
 
 // Include the product class file that contains the Product class definition
-require_once 'product.class.php';
+require_once '../classes/product.class.php';
 
 // Create an instance of the Product class
 $obj = new Product();

@@ -1,12 +1,12 @@
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="modal-add-product" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="staticBackdropLabel">Add Product</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div> 
-        <form action="" method="post" id="form-add-product">
+        <form action="" method="post" id="form-add-product" enctype="multipart/form-data">
             <div class="modal-body">
                 <div class="mb-2">
                     <label for="code" class="form-label">Code</label>
@@ -32,7 +32,13 @@
                     <label for="price" class="form-label">Price</label>
                     <input type="number" class="form-control" id="price" name="price">
                     <div class="invalid-feedback"></div>
-                </div>               
+                </div>  
+                
+                <div class="mb-2">
+                    <label for="product_image" class="form-label">Image</label>
+                    <input type="file" class="form-control" id="product_image" name="product_image" accept=".jpg, .jpeg, .png">
+                    <div class="invalid-feedback"></div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

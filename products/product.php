@@ -28,7 +28,7 @@
     <a href="addproduct.php">Add Product</a>
     
     <?php
-        require_once 'product.class.php';
+        require_once '../classes/product.class.php';
 
         $productObj = new Product();
 
