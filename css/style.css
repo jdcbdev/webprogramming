@@ -429,6 +429,11 @@ div.dt-container div.dt-paging ul.pagination{
     color: var(--brand-color);
 }
 
+.product-thumbnail{
+    max-width: 50px;
+    height: auto;
+}
+
 @media screen and (min-width: 768px) {
     .sidebar{
         display: flex;

@@ -58,6 +58,7 @@
                                     <th class="text-start">Price</th>
                                     <th class="text-center">Total Stocks</th>
                                     <th class="text-center">Available Stocks</th>
+                                    <th class="text-center">Image</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -88,6 +89,9 @@
                                             ">
                                                 <?= $available ?>
                                             </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <img src="<?= $arr['file_path'] ?>" alt="thumbnail" class="img-fluid product-thumbnail">
                                         </td>
                                         <td class="text-nowrap">
                                             <a href="../stocks/stocks.php?id=<?= $arr['id'] ?>" class="btn btn-sm btn-outline-primary me-1">Stock In/Out</a>
