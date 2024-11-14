@@ -81,6 +81,19 @@ class Account{
 
         return $data;
     }
+
+    function getAll(){
+        $sql = "SELECT * FROM account;";
+        $query = $this->db->connect()->prepare($sql);
+        $data = null;
+        
+        if($query->execute()){
+            $data = $query->fetchAll();
+        }
+        
+        return $data;
+    }
+
 }
 
 // $obj = new Account();
