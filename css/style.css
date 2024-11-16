@@ -16,6 +16,7 @@
     --sidebar-menu-hover-color: #bccee4;
     --sidebar-menu-active-color: #fff;
     --sidebar-width: 260px;
+    --sidebar-collapse: 60px;
     --topbar-height: 70px;
     --body-color: #F7F8FB;
     --brand-color: #EE4C51;
@@ -160,6 +161,7 @@
     position: sticky;
     top: 0;
     z-index: 3;
+    transition: margin-left 0.3s;
 }
 
 .navbar-custom header{
@@ -175,9 +177,22 @@
     left: 0;
     position: fixed;
     min-height: 100vh;
-    width: var(--sidebar-width);
     background-color: var(--sidebar-bg-color);
     transition: all 0.35 ease-in-out;
+}
+
+#sidebar{
+    display: none;
+    width: var(--sidebar-width);
+}
+
+#sidebar-mobile{
+    display: none;
+    width: var(--sidebar-collapse);
+}
+
+.collapsed{
+    width: var(--sidebar-collapse);
 }
 
 .logo{
@@ -187,7 +202,7 @@
     position: sticky;
     color: white;
     line-height: var(--topbar-height);
-    padding-left: 15px;
+    padding: 0 10px;
 }
 
 .logo img{
@@ -239,6 +254,7 @@
 .content-page{
     background-color: var(--body-color);
     min-height: calc(100vh - var(--topbar-height));
+    transition: margin-left 0.3s;
 }
 
 .page-title{
@@ -351,10 +367,6 @@
     padding: 1.5rem;
 }
 
-.sidebar{
-    display: none;
-}
-
 .active>.page-link, .page-link.active{
     background-color: var(--brand-color);
     border-color: var(--brand-color)
@@ -435,8 +447,15 @@ div.dt-container div.dt-paging ul.pagination{
 }
 
 @media screen and (min-width: 768px) {
-    .sidebar{
+    #sidebar{
         display: flex;
+    }
+    
+    #sidebar-mobile{
+        display: none;
+    }
+    .collapsed{
+        width: var(--sidebar-width);
     }
     .navbar-custom{
         margin-left: var(--sidebar-width);

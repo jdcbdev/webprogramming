@@ -1,8 +1,7 @@
-
 <div class="navbar-custom">
     <header class="px-1 shadow-sm">
         <div class="container-fluid d-flex justify-content-between">
-            <button class="btn btn-toggle">
+            <button class="btn btn-toggle" id="sidebarToggle">
                 <i class="bi bi-list"></i>
             </button>
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-end">

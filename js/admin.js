@@ -1,4 +1,42 @@
 $(document).ready(function(){
+    let collapsed = false
+    const sidebar = $('#sidebar');
+    const sidebarMobile = $('#sidebar-mobile')
+
+    $('#sidebarToggle').on('click', function() {
+        sidebarMobile.toggleClass('d-flex')
+        sidebar.toggleClass('d-none')
+
+        $('.sidebar').toggleClass('collapsed')
+
+        if ($('.sidebar').hasClass('collapsed')) {
+            document.documentElement.style.setProperty('--sidebar-width', '60px')
+        } else {
+            document.documentElement.style.setProperty('--sidebar-width', '260px')
+        }
+    }); 
+
+    $(document).on('click', function(){
+        if ($(window).width() < 768){
+            const sidebarWidth = getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width').trim()
+            if(collapsed){
+                collapsed = false
+                sidebarMobile.toggleClass('d-flex')
+                sidebar.toggleClass('d-none')
+                $('.sidebar').toggleClass('collapsed')
+                if ($('.sidebar').hasClass('collapsed')) {
+                    document.documentElement.style.setProperty('--sidebar-width', '60px')
+                } else {
+                    document.documentElement.style.setProperty('--sidebar-width', '260px')
+                }
+                return
+            }
+            if ($('.sidebar').hasClass('collapsed') && sidebarWidth === '60px') {
+                collapsed = true
+            }
+        }
+    })
+    
     $('.nav-link').on('click', function(e){
         e.preventDefault()
         $('.nav-link').removeClass('link-active')
