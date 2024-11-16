@@ -1,0 +1,22 @@
+<!-- Modal -->
+<div class="modal fade" id="modal-product" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Delete Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> 
+        <form action="delete-product.php" method="post" id="form-product" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="mb-2">
+                    <p>Are you sure you want to delete the product <span id="product-name"></span> ?</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button type="submit" class="btn btn-primary brand-bg-color">Yes</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -13,7 +13,7 @@ $maxFileSize = 5 * 1024 * 1024;
 $productObj = new ProductImage();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $id = $_GET['id'];
+    $id = $_POST['id'];
     $code = clean_input($_POST['code']);
     $name = clean_input($_POST['name']);
     $category = clean_input($_POST['category']);
@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $image = $_FILES['product_image']['name'];
     $imageTemp = $_FILES['product_image']['tmp_name'];
     $imageSize = $_FILES['product_image']['size'];
-    $hasImagePreview = isset($_GET['hasImagePreview']) && $_GET['hasImagePreview'] === 'true';
+    $hasImagePreview = isset($_POST['hasImagePreview']) && $_POST['hasImagePreview'] === 'true';
 
     if(empty($code)){
         $codeErr = 'Product Code is required.';

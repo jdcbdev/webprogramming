@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="page-title-right d-flex align-items-center"> 
-                            <a id="add-product" href="#" class="btn btn-primary brand-bg-color">Add Product</a>
+                            <a id="add-product" href="../products/add-product.html" class="btn btn-primary brand-bg-color">Add Product</a>
                         </div>
                     </div>
                     
@@ -97,7 +97,7 @@
                                             <a href="../stocks/stocks.php?id=<?= $arr['id'] ?>" class="btn btn-sm btn-outline-primary me-1">Stock In/Out</a>
                                             <a href="../products/edit-product.html" data-id="<?= $arr['id'] ?>" class="btn btn-sm btn-outline-success me-1 btn-edit">Edit</a>
                                             <?php if (isset($_SESSION['account']['is_admin']) && $_SESSION['account']['is_admin']) { ?>
-                                                <button class="btn btn-sm btn-outline-danger deleteBtn" data-id="<?= $arr['id'] ?>" data-name="<?= htmlspecialchars($arr['name']) ?>">Delete</button>
+                                                <a href="../products/delete-product.html" data-id="<?= $arr['id'] ?>" data-name="<?= $arr['name'] ?>" class="btn btn-sm btn-outline-danger btn-delete" >Delete</a>
                                             <?php } ?>
                                         </td>
                                     </tr>
