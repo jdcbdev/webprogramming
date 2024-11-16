@@ -49,7 +49,7 @@ class Product {
     }
 
     function fetchRecord($recordID) {
-        $sql = "SELECT * FROM product WHERE id = :recordID;";
+        $sql = "SELECT p.*, file_path FROM product p LEFT JOIN product_image i ON p.id = i.product_id WHERE p.id = :recordID;";
         $query = $this->db->connect()->prepare($sql);
         $query->bindParam(':recordID', $recordID);
         $data = null;

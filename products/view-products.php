@@ -95,7 +95,7 @@
                                         </td>
                                         <td class="text-nowrap">
                                             <a href="../stocks/stocks.php?id=<?= $arr['id'] ?>" class="btn btn-sm btn-outline-primary me-1">Stock In/Out</a>
-                                            <a href="../products/editproduct.php?id=<?= $arr['id'] ?>" class="btn btn-sm btn-outline-success me-1">Edit</a>
+                                            <a href="../products/edit-product.html" data-id="<?= $arr['id'] ?>" class="btn btn-sm btn-outline-success me-1 btn-edit">Edit</a>
                                             <?php if (isset($_SESSION['account']['is_admin']) && $_SESSION['account']['is_admin']) { ?>
                                                 <button class="btn btn-sm btn-outline-danger deleteBtn" data-id="<?= $arr['id'] ?>" data-name="<?= htmlspecialchars($arr['name']) ?>">Delete</button>
                                             <?php } ?>

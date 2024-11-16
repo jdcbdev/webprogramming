@@ -13,7 +13,7 @@ $maxFileSize = 5 * 1024 * 1024;
 $productObj = new ProductImage();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    
+    $id = $_GET['id'];
     $code = clean_input($_POST['code']);
     $name = clean_input($_POST['name']);
     $category = clean_input($_POST['category']);
@@ -21,10 +21,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $image = $_FILES['product_image']['name'];
     $imageTemp = $_FILES['product_image']['tmp_name'];
     $imageSize = $_FILES['product_image']['size'];
+    $hasImagePreview = isset($_GET['hasImagePreview']) && $_GET['hasImagePreview'] === 'true';
 
     if(empty($code)){
         $codeErr = 'Product Code is required.';
-    } else if ($productObj->codeExists($code)){
+    } else if ($productObj->codeExists($code, $id)){
         $codeErr = 'Product Code already exists.';
     }
 
@@ -45,11 +46,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 
     $imageFileType = strtolower(pathinfo($image, PATHINFO_EXTENSION));
-    if(empty($image)){
+    if (!$hasImagePreview && empty($image)) {
         $imageErr = 'Product image is required.';
-    } else if(!in_array($imageFileType, $allowedType)){
+    } else if (!empty($image) && !in_array($imageFileType, $allowedType)) {
         $imageErr = 'Accepted files are jpg, jpeg, and png only.';
-    } else if($imageSize > $maxFileSize){
+    } else if (!empty($image) && $imageSize > $maxFileSize) {
         $imageErr = 'File size must not exceed 5MB.';
     }
 
@@ -66,20 +67,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 
     if(empty($codeErr) && empty($nameErr) && empty($categoryErr) && empty($priceErr) && empty($imageErr)){
+        $productObj->id = $id;
         $productObj->code = $code;
         $productObj->name = $name;
         $productObj->category_id = $category;
         $productObj->price = $price;
 
-        if($productObj->add()){
+        if($productObj->edit()){
 
-            $targetImage = $uploadDir . uniqid() . basename($image);
-            move_uploaded_file($imageTemp, $targetImage);
+            if (!empty($image)) {
 
-            $productObj->file_path = $targetImage;
-            $productObj->image_role = 'main';
-            $productObj->addImage();
-            
+                $productObj->deleteImage($id);
+
+                $targetImage = $uploadDir . uniqid() . basename($image);
+                move_uploaded_file($imageTemp, $targetImage);
+                $productObj->file_path = $targetImage;
+                $productObj->image_role = 'main';
+                $productObj->addImage($id);
+            }
             echo json_encode(['status' => 'success']);
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Something went wrong when adding the new product.']);

@@ -446,6 +446,12 @@ div.dt-container div.dt-paging ul.pagination{
     height: auto;
 }
 
+#product-image-preview{
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
 @media screen and (min-width: 768px) {
     #sidebar{
         display: flex;
