@@ -9,6 +9,7 @@
         header('location: ../account/login.php');
     }
 
+    $page_title = 'Dashboard';
     require_once '../includes/head.php';
 ?>
 <body id="dashboard">

@@ -20,6 +20,7 @@
     --topbar-height: 70px;
     --body-color: #F7F8FB;
     --brand-color: #EE4C51;
+    --brand-color-rgb: 238, 76, 81;
     --ct-blue: #2c8ef8;
     --ct-indigo: #727cf5;
     --ct-purple: #6b5eae;
@@ -450,6 +451,29 @@ div.dt-container div.dt-paging ul.pagination{
     width: 70px;
     height: 70px;
     object-fit: contain;
+}
+
+body.authentication-bg .account-pages {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 100vh;
+}
+
+.forgotpassword-link, .forgotpassword-link:active, .forgotpassword-link:visited{
+    text-decoration: none;
+    color: var(--ct-body-color);
+}
+
+.forgotpassword-link:hover{
+    color: var(--brand-color);
+}
+
+#login .bi-eye, #login .bi-eye-slash {
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

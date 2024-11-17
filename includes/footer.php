@@ -4,3 +4,4 @@
 <script src="../vendor/datatable-2.1.8/datatables.min.js"></script>
 <script src="../js/product.js"></script>
 <script src="../js/admin.js"></script>
+<script src="../js/login.js"></script>
