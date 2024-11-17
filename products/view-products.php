@@ -94,7 +94,7 @@
                                             <img src="<?= $arr['file_path'] ?>" alt="thumbnail" class="img-fluid product-thumbnail">
                                         </td>
                                         <td class="text-nowrap">
-                                            <a href="../stocks/stocks.php?id=<?= $arr['id'] ?>" class="btn btn-sm btn-outline-primary me-1">Stock In/Out</a>
+                                            <a href="../stocks/stocks-form.html" data-id="<?= $arr['id'] ?>" data-name="<?= $arr['name'] ?>" class="btn btn-sm btn-outline-primary me-1 btn-stocks">Stock In/Out</a>
                                             <a href="../products/edit-product.html" data-id="<?= $arr['id'] ?>" class="btn btn-sm btn-outline-success me-1 btn-edit">Edit</a>
                                             <?php if (isset($_SESSION['account']['is_admin']) && $_SESSION['account']['is_admin']) { ?>
                                                 <a href="../products/delete-product.html" data-id="<?= $arr['id'] ?>" data-name="<?= $arr['name'] ?>" class="btn btn-sm btn-outline-danger btn-delete" >Delete</a>

@@ -1,0 +1,60 @@
+<!-- Modal -->
+<div class="modal fade" id="modal-stocks" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalStocksLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalStocksLabel">Stock In/Out Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="stocks.php" method="post" id="form-stocks" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="current" class="form-label">Current Stocks</label>
+                        <input type="number" class="form-control" id="current" name="current" value="0" disabled>
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">Quantity</label>
+                        <input type="number" class="form-control" id="quantity" name="quantity">
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Status</label>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" name="status" id="stockin" value="in">
+                                <label for="stockin" class="form-check-label">Stock In</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" name="status" id="stockout" value="out">
+                                <label for="stockout" class="form-check-label">Stock Out</label>
+                            </div>
+                        </div>
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div id="reasonContainer" class="mb-3" style="display: none;">
+                        <label for="reason" class="form-label">Reason</label>
+                        <textarea class="form-control" id="reason" name="reason" rows="3"></textarea>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary brand-bg-color">Save Stocks</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $('.form-check-input').on('click', function(){
+        if($(this).val() == 'in'){
+            $('#reasonContainer').hide()
+        }else{
+            $('#reasonContainer').show()
+        }
+    })
+</script>

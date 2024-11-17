@@ -41,7 +41,3 @@ class Stocks{
         return $data;
     }
 }
-
-// $obj = new Stocks();
-
-// var_dump($obj->getAvailableStocks(32));
